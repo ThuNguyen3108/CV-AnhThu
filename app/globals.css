@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light theme */
+:root {
+  --bg: #f5f5f7;
+  --bg-elevated: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f9fafb;
+  --bg-code: #1e1e2e;
+  --text: #1a1a1a;
+  --text-muted: #6b7280;
+  --accent: #059669;
+  --accent-cyan: #0891b2;
+  --accent-soft: rgba(5, 150, 105, 0.12);
+  --border: #e5e7eb;
+  /* About Me — Cypress-style mint + waves */
+  --about-bg: #e0f4ee;
+  --about-wave1: #b8e6d8;
+  --about-wave2: #7dd3bf;
+  --about-wave3: #0d9488;
+}
+
+/* Dark theme (Cypress-style) */
+.dark {
+  --bg: #0b0b0f;
+  --bg-elevated: #12121a;
+  --bg-card: #16161f;
+  --bg-card-hover: #1c1c28;
+  --bg-code: #262a39;
+  --text: #ffffff;
+  --text-muted: #a0aec0;
+  --accent: #42d19d;
+  --accent-cyan: #26b8e3;
+  --accent-soft: rgba(66, 209, 157, 0.12);
+  --border: #2d3748;
+  /* About Me — dark teal waves */
+  --about-bg: #0f1f1c;
+  --about-wave1: #134e48;
+  --about-wave2: #0d3d38;
+  --about-wave3: #042f2e;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply antialiased;
+    background-color: var(--bg);
+    color: var(--text);
+  }
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+/* Animated background shapes (Cypress-style: subtle) */
+.bg-shape {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+.dark .bg-shape {
+  opacity: 0.12;
+}
+
+/* About Me — Cypress-style: mint background + layered waves */
+.about-hero {
+  background-color: var(--about-bg);
+  padding: 4rem 1.5rem 0;
+  text-align: center;
+}
+.about-hero .about-title {
+  font-family: var(--font-space-mono, ui-monospace, monospace);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+}
+.about-hero .about-lead {
+  max-width: 42rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+@media (min-width: 768px) {
+  .about-hero {
+    padding: 5rem 2rem 0;
+  }
+  .about-hero .about-title {
+    font-size: 2rem;
+  }
+  .about-hero .about-lead {
+    font-size: 1.125rem;
+  }
+}
+.about-waves {
+  margin-top: 3rem;
+  line-height: 0;
+  overflow: hidden;
+}
+.about-waves svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+

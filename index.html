@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nguyễn Thị Anh Thư — QA Engineer | Test Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="nav-logo">AT</a>
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">About</button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+          </ul>
+        </li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="My_CV.pdf" download="My_CV.pdf" class="btn btn-ghost">Download CV</a>
+        <a href="#contact" class="btn btn-primary">Get in touch</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero - Cypress style -->
+    <section class="hero" id="hero">
+      <h1 class="hero-title">QA & Test Automation<br />for modern teams</h1>
+      <p class="hero-subtitle">
+        Create tests, debug failures, and improve quality faster. Nearly 3 years of experience in manual and automation testing across web and mobile, with strong hands-on in API testing, BDD automation, and Cypress.
+      </p>
+      <div class="hero-pills" role="tablist">
+        <a href="#about" class="hero-pill" data-pill="about">About</a>
+        <a href="#experience" class="hero-pill" data-pill="experience">Experience</a>
+        <a href="#skills" class="hero-pill" data-pill="skills">Skills</a>
+        <a href="#contact" class="hero-pill" data-pill="contact">Contact</a>
+      </div>
+      <p class="hero-name">Nguyễn Thị Anh Thư · QA Engineer</p>
+    </section>
+
+    <!-- Introducing section - 4 feature cards like Cypress -->
+    <section class="section section-intro" id="about">
+      <div class="section-header">
+        <span class="section-badge">Introducing</span>
+        <h2 class="section-title">Write, run, and deliver quality like a pro</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3 class="feature-card-title">Test modern apps in the browser</h3>
+          <p class="feature-card-desc">Manual and automated E2E testing for web and mobile. Functional, regression, and smoke testing with clear test cases and acceptance criteria.</p>
+          <a href="#experience" class="feature-link">Learn more <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="feature-card">
+          <h3 class="feature-card-title">Automation with Cypress & BDD</h3>
+          <p class="feature-card-desc">Build and maintain automation with Cypress, Karate BDD, Selenium & Cucumber. Improve coverage and support scalable validation.</p>
+          <a href="#skills" class="feature-link">Learn more <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="feature-card">
+          <h3 class="feature-card-title">API testing & integration</h3>
+          <p class="feature-card-desc">REST API testing with Postman and Karate. Validate request/response, error handling, and service integration across environments.</p>
+          <a href="#experience" class="feature-link">Learn more <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="feature-card">
+          <h3 class="feature-card-title">Collaborate across teams</h3>
+          <p class="feature-card-desc">Work with PO, BA, developers and cross-region teams. Requirement clarification, defect tracking in JIRA, release readiness.</p>
+          <a href="#contact" class="feature-link">Learn more <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Code block - Cypress style -->
+    <section class="section section-code">
+      <div class="code-block-wrap">
+        <div class="code-block">
+          <div class="code-block-header">
+            <span class="code-block-dot"></span>
+            <span class="code-block-dot"></span>
+            <span class="code-block-dot"></span>
+            <span class="code-block-filename">login.cy.js</span>
+          </div>
+          <pre class="code-block-content"><code><span class="line-num">1</span><span class="token keyword">it</span>(<span class="token string">'user should be able to log in'</span>, () => {
+<span class="line-num">2</span>  cy.<span class="token keyword">visit</span>(<span class="token string">'/login'</span>)
+<span class="line-num">3</span>
+<span class="line-num">4</span>  <span class="token comment">// fill in the form</span>
+<span class="line-num">5</span>  cy.<span class="token keyword">get</span>(<span class="token string">'input[type="email"]'</span>).<span class="token keyword">type</span>(<span class="token string">'user@example.com'</span>)
+<span class="line-num">6</span>  cy.<span class="token keyword">get</span>(<span class="token string">'input[type="password"]'</span>).<span class="token keyword">type</span>(<span class="token string">'password'</span>)
+<span class="line-num">7</span>
+<span class="line-num">8</span>  <span class="token comment">// submit and assert</span>
+<span class="line-num">9</span>  cy.<span class="token keyword">get</span>(<span class="token string">'button'</span>).<span class="token keyword">contains</span>(<span class="token string">'Sign in'</span>).<span class="token keyword">click</span>()
+<span class="line-num">10</span>  cy.<span class="token keyword">contains</span>(<span class="token string">'button'</span>, <span class="token string">'Logout'</span>).<span class="token keyword">should</span>(<span class="token string">'be.visible'</span>)
+<span class="line-num">11</span>})</code></pre>
+        </div>
+      </div>
+      <p class="code-caption">Cypress E2E test example — the kind of automation I work with daily.</p>
+    </section>
+
+    <!-- Stats - like "Loved by OSS" -->
+    <section class="section section-stats">
+      <h2 class="section-title section-title-center">Focused on quality & growth</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-value">~3</span>
+          <span class="stat-label">Years in QA</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">4</span>
+          <span class="stat-label">Companies & projects</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">ISTQB</span>
+          <span class="stat-label">Foundation certified</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me — Cypress-style mint + waves -->
+    <section class="about-hero" id="about">
+      <div class="about-hero-inner">
+        <h2 class="about-title">About Me</h2>
+        <p class="about-lead">As a QA Engineer, I focus on ensuring product quality and reliability through manual and automation testing across web and mobile applications. By applying modern testing practices—API testing, BDD automation, and end-to-end execution—and collaborating with cross-functional teams, I help deliver stable, user-centric products and continuously improve the development lifecycle.</p>
+      </div>
+      <div class="about-waves" aria-hidden>
+        <svg viewBox="0 0 1440 140" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0 80 Q360 20 720 80 T1440 80 L1440 140 L0 140 Z" fill="var(--about-wave1)" />
+          <path d="M0 100 Q360 50 720 100 T1440 100 L1440 140 L0 140 Z" fill="var(--about-wave2)" />
+          <path d="M0 120 Q360 80 720 120 T1440 120 L1440 140 L0 140 Z" fill="var(--about-wave3)" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="card card-cypress">
+        <h3 class="card-company">Can Tho University</h3>
+        <p class="card-role">Bachelor — Computer Networks and Data Communication</p>
+        <p class="card-meta">GPA: 3.71/4.00 · 08/2019 – 12/2023</p>
+      </div>
+    </section>
+
+    <!-- Experience - scroll-driven timeline: left = company logo, right = description -->
+    <section class="section section-experience" id="experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="experience-timeline" id="experience-timeline">
+        <div class="timeline-line" aria-hidden="true">
+          <div class="timeline-line-dashed"></div>
+          <div class="timeline-line-filled" id="timeline-line-filled"></div>
+        </div>
+        <div class="timeline-items">
+          <article class="timeline-item" data-join="08/2025">
+            <div class="timeline-marker"></div>
+            <div class="timeline-item-left">
+              <img src="https://logo.clearbit.com/designveloper.com" alt="Designveloper" class="timeline-company-logo" width="80" height="80" />
+            </div>
+            <div class="timeline-item-right">
+              <h3 class="card-company">Designveloper (DSV)</h3>
+              <p class="card-role">QC Engineer</p>
+              <p class="card-meta">08/2025 – Now · TP Hồ Chí Minh</p>
+              <p class="card-project">Lumin Sign – E-signature & Contract Lifecycle Management</p>
+              <p class="card-domain">Digital Signature / Document Workflow · ~20 members (Vietnam, New Zealand)</p>
+              <ul class="card-points">
+                <li>Functional regression, test cases, requirement clarification, backlog refinement.</li>
+                <li>Document workflows: signing order, permissions, reminders, publishing, lifecycle.</li>
+                <li>API testing with Postman; manual and Cypress automation; JIRA defect tracking.</li>
+              </ul>
+              <div class="tags">
+                <span>Postman</span><span>Cypress</span><span>JIRA</span><span>Regression</span><span>API Testing</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item" data-join="02/2025">
+            <div class="timeline-marker"></div>
+            <div class="timeline-item-left">
+              <img src="https://logo.clearbit.com/momo.vn" alt="M_Service (MoMo)" class="timeline-company-logo" width="80" height="80" />
+            </div>
+            <div class="timeline-item-right">
+              <h3 class="card-company">M_Service (MoMo)</h3>
+              <p class="card-role">QC Engineer</p>
+              <p class="card-meta">02/2025 – 08/2025 · TP Hồ Chí Minh</p>
+              <p class="card-project">CVS – Securities Trading Platform</p>
+              <p class="card-domain">Fintech / Trading Systems</p>
+              <ul class="card-points">
+                <li>Functional and regression testing for securities trading; E2E trading workflows.</li>
+                <li>API testing and data validation; market open/close time-based testing.</li>
+              </ul>
+              <div class="tags">
+                <span>Fintech</span><span>API Testing</span><span>Regression</span><span>JIRA</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item" data-join="09/2023">
+            <div class="timeline-marker"></div>
+            <div class="timeline-item-left">
+              <img src="https://logo.clearbit.com/kms-technology.com" alt="KMS Technology" class="timeline-company-logo" width="80" height="80" />
+            </div>
+            <div class="timeline-item-right">
+              <h3 class="card-company">KMS Technology</h3>
+              <p class="card-role">QA Engineer</p>
+              <p class="card-meta">09/2023 – 02/2025 · TP Hồ Chí Minh</p>
+              <p class="card-project">Motor Vehicle Driver – LexisNexis</p>
+              <p class="card-domain">Vehicle & Driver Data Platform (Insurance & Legal Risk)</p>
+              <ul class="card-points">
+                <li>Functional, integration, regression, error-handling tests; Karate BDD automation.</li>
+                <li>Cross-region collaboration (US, India, Vietnam); test reports and release decisions.</li>
+              </ul>
+              <div class="tags">
+                <span>Karate</span><span>BDD</span><span>Regression</span><span>Agile</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item" data-join="05/2023">
+            <div class="timeline-marker"></div>
+            <div class="timeline-item-left">
+              <img src="https://logo.clearbit.com/tps.com.vn" alt="TPS Software" class="timeline-company-logo" width="80" height="80" />
+            </div>
+            <div class="timeline-item-right">
+              <h3 class="card-company">TPS Software</h3>
+              <p class="card-role">QC Engineer</p>
+              <p class="card-meta">05/2023 – 08/2023 · TP Hồ Chí Minh</p>
+              <p class="card-project">Vibe – Marketing Platform</p>
+              <ul class="card-points">
+                <li>Functional, regression, smoke, API and DB testing; Selenium & Cucumber automation.</li>
+              </ul>
+              <div class="tags">
+                <span>Selenium</span><span>Cucumber</span><span>API Testing</span><span>JIRA</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-group">
+        <h3 class="skills-group-title">Core Skills</h3>
+        <div class="tags">
+          <span>BDD Automation (2 years)</span><span>REST API Testing (2 years)</span><span>Test Automation (2 years)</span><span>Testing Fundamentals & Tools (2 years)</span><span>Testing Types & Techniques (2 years)</span>
+        </div>
+      </div>
+      <div class="skills-group">
+        <h3 class="skills-group-title">Tech & Tools</h3>
+        <div class="tags">
+          <span>Javascript (1 year)</span><span>Cypress (&lt; 1 year)</span><span>Karate (&lt; 1 year)</span><span>Selenium (&lt; 1 year)</span>
+        </div>
+      </div>
+      <div class="skills-group">
+        <h3 class="skills-group-title">Soft Skills</h3>
+        <div class="tags">
+          <span>Learning & Growth</span><span>Communication & Collaboration</span><span>Time Management</span><span>Ownership & Professionalism</span>
+        </div>
+      </div>
+      <div class="skills-group">
+        <h3 class="skills-group-title">Certificate</h3>
+        <p class="cert-line">ISTQB Foundation · Brightest · 11/2025</p>
+      </div>
+      <div class="skills-group">
+        <h3 class="skills-group-title">Foreign Language</h3>
+        <p class="cert-line">English (Intermediate)</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-contact" id="contact">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="contact-intro">Hey there! Feel free to reach out — I'd love to hear from you.</p>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span class="contact-label">Address</span>
+          <a href="https://maps.google.com/?q=TP+Ho+Chi+Minh" target="_blank" rel="noopener">TP Hồ Chí Minh, Vietnam</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:nguyenthianhthu3108.work@gmail.com">nguyenthianhthu3108.work@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Phone</span>
+          <a href="tel:0368887329">0368887329</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <a href="https://linkedin.com/in/sherrythu/" target="_blank" rel="noopener">linkedin.com/in/sherrythu/</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Nguyễn Thị Anh Thư · QA Engineer Portfolio · Inspired by <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
